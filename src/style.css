@@ -1,0 +1,35 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-primary: #6366f1;
+  --color-secondary: #8b5cf6;
+}
+
+@layer utilities {
+  .no-arrows::-webkit-inner-spin-button,
+  .no-arrows::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .no-arrows {
+    appearance: textfield;
+    -moz-appearance: textfield;
+  }
+
+  input.no-picker::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+
+  input.no-picker::-webkit-color-swatch {
+    border: none;
+  }
+
+  input.no-picker {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
