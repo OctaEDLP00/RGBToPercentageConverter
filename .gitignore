@@ -23,7 +23,7 @@ dist-ssr
 
 # Locks
 bun.lock
-pnpm-lock.yml
+pnpm-lock.yaml
 package-lock.json
 yarn.lock
 
