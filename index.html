@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/RGBToPercentageConverter/favicon.png"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta
+      name="description"
+      content="RGB converter to Percentage"
+    />
+    <link
+      rel="canonical"
+      href="https://octaedlp00.github.io/RGBToPercentageConverter"
+    />
+    <title data-i18n="app.title">Convertidor RGB a Porcentaje</title>
+    <script type="module" crossorigin src="/RGBToPercentageConverter/index-CILuPl0W.js"></script>
+    <link rel="stylesheet" crossorigin href="/RGBToPercentageConverter/index-CxyhpZYK.css">
+  </head>
+  <body class="bg-white/70 text-[#131313] dark:bg-[#131313] dark:text-white/60">
+    <header class="border-b border-slate-200 shadow-sm">
+      <div class="mx-auto flex max-w-4xl items-center justify-between px-4 py-6">
+        <div class="text-center">
+          <div class="mb-4 flex items-center justify-center">
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/favicon-ZbNB7HkdWL8lB3lfIjKNbfj3aHCwGz.png"
+              alt="RGB Converter Logo"
+              class="mr-4 size-16"
+            />
+            <h1
+              class="text-3xl font-bold"
+              data-i18n="header.title"
+            >
+              Convertidor RGB a Porcentaje
+            </h1>
+          </div>
+        </div>
+        <!-- <div class="text-center">
+          <label
+            for="lightDarkMode"
+            class="mb-5 inline-flex cursor-pointer items-center"
+          >
+            <input
+              id="lightDarkMode"
+              name="lightDarkMode"
+              type="checkbox"
+              class="peer sr-only"
+            />
+            <div
+              class="peer relative h-5 w-9 rounded-full peer-checked:bg-blue-600 peer-focus:ring-4 peer-focus:ring-blue-300 peer-focus:outline-none after:absolute after:start-[2px] after:top-[2px] after:h-4 after:w-4 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:border-white rtl:peer-checked:after:-translate-x-full dark:border-gray-600 dark:bg-gray-700 dark:peer-checked:bg-blue-600 dark:peer-focus:ring-blue-800"
+            ></div>
+          </label>
+        </div> -->
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="mx-auto max-w-4xl px-4 py-12">
+      <!-- Converter Card -->
+      <div class="overflow-hidden rounded-2xl border border-slate-200 shadow-xl">
+        <!-- Card Header -->
+        <header class="px-8 py-6">
+          <h2
+            class="text-center text-2xl font-semibold"
+            data-i18n="card.title"
+          >
+            Convertidor de Color
+          </h2>
+          <p
+            class="mt-2 text-center"
+            data-i18n="card.subtitle"
+          >
+            Ingresa los valores RGB y obtén los porcentajes equivalentes
+          </p>
+        </header>
+
+        <!-- Card Body -->
+        <article class="p-8">
+          <div class="grid gap-8 md:grid-cols-2">
+            <!-- Input Section -->
+            <section class="space-y-6">
+              <h3
+                class="mb-4 flex items-center text-xl font-semibold"
+                data-i18n="section.input"
+              >
+                <span class="bg-primary mr-3 size-2 rounded-full"></span>
+                Valores RGB
+              </h3>
+
+              <!-- RGB Inputs -->
+              <div class="space-y-4">
+                <!-- Red Input -->
+                <div class="relative space-y-2">
+                  <label
+                    for="red"
+                    class="block text-sm font-medium"
+                    data-i18n="label.red"
+                  >
+                    Rojo (R)
+                  </label>
+                  <div class="relative">
+                    <input
+                      type="number"
+                      id="red"
+                      name="red"
+                      min="0"
+                      max="255"
+                      pattern="^(25[0-5]|2[0-4][0-9]|1?[0-9]{1,2})$"
+                      placeholder="0-255"
+                      required
+                      aria-errormessage="errorRedInput"
+                      class="focus:ring-primary focus:border-primary no-arrows w-full rounded-lg border border-slate-300 px-4 py-3 placeholder-slate-400 transition-colors focus:ring-2"
+                    />
+                    <div class="absolute top-3 right-3 size-6 rounded bg-red-700"></div>
+                  </div>
+                  <p
+                    class="absolute top-0 right-0 text-red-500"
+                    id="errorRedInput"
+                  ></p>
+                </div>
+
+                <!-- Green Input -->
+                <div class="relative space-y-2">
+                  <label
+                    for="green"
+                    class="block text-sm font-medium"
+                    data-i18n="label.green"
+                  >
+                    Verde (G)
+                  </label>
+                  <div class="relative">
+                    <input
+                      type="number"
+                      id="green"
+                      name="green"
+                      min="0"
+                      max="255"
+                      pattern="^(25[0-5]|2[0-4][0-9]|1?[0-9]{1,2})$"
+                      placeholder="0-255"
+                      aria-errormessage="errorGreenInput"
+                      required
+                      class="focus:ring-primary focus:border-primary no-arrows w-full rounded-lg border border-slate-300 px-4 py-3 placeholder-slate-400 transition-colors focus:ring-2"
+                    />
+                    <div class="absolute top-3 right-3 size-6 rounded bg-green-700"></div>
+                  </div>
+                  <p
+                    class="absolute top-0 right-0 text-red-500"
+                    id="errorGreenInput"
+                  ></p>
+                </div>
+
+                <!-- Blue Input -->
+                <div class="relative space-y-2">
+                  <label
+                    for="blue"
+                    class="block text-sm font-medium"
+                    data-i18n="label.blue"
+                  >
+                    Azul (B)
+                  </label>
+                  <div class="relative">
+                    <input
+                      type="number"
+                      id="blue"
+                      name="blue"
+                      min="0"
+                      max="255"
+                      pattern="^(25[0-5]|2[0-4][0-9]|1?[0-9]{1,2})$"
+                      placeholder="0-255"
+                      aria-errormessage="errorBlueInput"
+                      required
+                      class="focus:ring-primary focus:border-primary no-arrows w-full rounded-lg border border-slate-300 px-4 py-3 placeholder-slate-400 transition-colors focus:ring-2"
+                    />
+                    <div class="absolute top-3 right-3 size-6 rounded bg-blue-700"></div>
+                  </div>
+                  <p
+                    class="absolute top-0 right-0 text-red-500"
+                    id="errorBlueInput"
+                  ></p>
+                </div>
+              </div>
+
+              <!-- Convert Button -->
+              <button
+                id="converter"
+                class="from-primary to-secondary w-full transform rounded-lg bg-gradient-to-r px-6 py-3 font-semibold text-white shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:from-indigo-600 hover:to-purple-600 hover:shadow-xl"
+                data-i18n="button.convert"
+              >
+                Convertir a Porcentaje
+              </button>
+            </section>
+
+            <!-- Output Section -->
+            <section class="space-y-6">
+              <h3
+                class="mb-4 flex items-center text-xl font-semibold"
+                data-i18n="section.output"
+              >
+                <span class="bg-secondary mr-3 size-2 rounded-full"></span>
+                Resultado
+              </h3>
+
+              <!-- Color Preview -->
+              <div class="space-y-2">
+                <span
+                  for="colorPreview"
+                  class="block text-sm font-medium"
+                  data-i18n="label.preview"
+                  >Vista previa del color</span
+                >
+                <div>
+                  <div
+                    style="--bg-hex-color: black"
+                    id="colorPreview"
+                    class="no-picker h-13 w-full cursor-pointer rounded-lg border-none bg-[var(--bg-hex-color)] shadow-inner"
+                  ></div>
+                </div>
+              </div>
+
+              <!-- Percentage Outputs -->
+              <div class="space-y-4">
+                <!-- Red Percentage -->
+                <div class="space-y-2">
+                  <label
+                    for="red-percentage"
+                    class="block text-sm font-medium"
+                    data-i18n="output.red"
+                  >
+                    Rojo (%)
+                  </label>
+                  <input
+                    id="red-percentage"
+                    type="text"
+                    value="0%"
+                    readonly
+                    class="w-full rounded-lg border border-slate-300 px-4 py-3 font-mono"
+                  />
+                </div>
+
+                <!-- Green Percentage -->
+                <div class="space-y-2">
+                  <label
+                    for="green-percentage"
+                    class="block text-sm font-medium"
+                    data-i18n="output.green"
+                  >
+                    Verde (%)
+                  </label>
+                  <input
+                    id="green-percentage"
+                    type="text"
+                    value="0%"
+                    readonly
+                    class="w-full rounded-lg border border-slate-300 px-4 py-3 font-mono"
+                  />
+                </div>
+
+                <!-- Blue Percentage -->
+                <div class="space-y-2">
+                  <label
+                    for="blue-percentage"
+                    class="block text-sm font-medium"
+                    data-i18n="output.blue"
+                  >
+                    Azul (%)
+                  </label>
+                  <input
+                    id="blue-percentage"
+                    type="text"
+                    value="0%"
+                    readonly
+                    class="w-full rounded-lg border border-slate-300 px-4 py-3 font-mono"
+                  />
+                </div>
+
+                <!-- Combined Percentage -->
+                <div class="space-y-2">
+                  <label
+                    for="rgbToPercentage"
+                    class="block text-sm font-medium"
+                    data-i18n="output.combined"
+                  >
+                    RGB en porcentajes
+                  </label>
+                  <input
+                    id="rgbToPercentage"
+                    type="text"
+                    value="r: 0% g: 0% b: 0%"
+                    readonly
+                    class="w-full rounded-lg border border-slate-300 px-4 py-3 font-mono font-semibold"
+                  />
+                </div>
+              </div>
+            </section>
+          </div>
+        </article>
+      </div>
+
+      <!-- Info Section -->
+      <section class="mt-12 grid gap-8 md:grid-cols-2">
+        <!-- How it works -->
+        <div class="rounded-xl border border-slate-200 p-6 shadow-lg">
+          <h3
+            class="mb-4 flex items-center text-lg font-semibold"
+            data-i18n="info.how"
+          >
+            ¿Cómo funciona?
+          </h3>
+          <div>
+            <ul class="space-y-3">
+              <li data-i18n="info.line1">
+                <span>Los valores RGB van de 0 a 255</span>
+              </li>
+              <li data-i18n="info.line2">
+                <span>Los porcentajes van de 0% a 100%</span>
+              </li>
+              <li data-i18n="info.line3">
+                <span>Fórmula: (valor RGB ÷ 255) × 100</span>
+              </li>
+              <li data-i18n="info.line4">
+                <span>Ejemplo: 128 = (128 ÷ 255) × 100 = 50.2%</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Examples -->
+        <div class="rounded-xl border border-slate-200 p-6 shadow-lg">
+          <h3
+            class="mb-4 flex items-center text-lg font-semibold"
+            data-i18n="examples.title"
+          >
+            Ejemplos comunes
+          </h3>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span data-i18n="examples.white">Blanco:</span>
+              <span class="text- rounded px-2 py-1 font-mono text-sm">rgb(100%, 100%, 100%)</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span data-i18n="examples.black">Negro:</span>
+              <span class="rounded px-2 py-1 font-mono text-sm">rgb(0%, 0%, 0%)</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span data-i18n="examples.red">Rojo:</span>
+              <span class="rounded px-2 py-1 font-mono text-sm">rgb(100%, 0%, 0%)</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span data-i18n="examples.gray">Gris:</span>
+              <span class="rounded px-2 py-1 font-mono text-sm">rgb(50%, 50%, 50%)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-16 border-t border-slate-200">
+      <div class="mx-auto max-w-4xl px-4 py-8">
+        <div class="text-center">
+          <p
+            data-i18n="footer.title"
+            class="mb-2"
+          >
+            Convertidor RGB a Porcentaje
+          </p>
+          <p
+            data-i18n="footer.subtitle"
+            class="text-sm"
+          >
+            Herramienta gratuita para diseñadores y desarrolladores
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
